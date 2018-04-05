@@ -12,8 +12,8 @@ class Cube {
     pushMatrix();
     //noFill();
     fill(50);
-    noStroke();
-    //stroke(255);
+    //noStroke();
+    stroke(0);
     translate(pos.x,pos.y,pos.z);
     
     box(r);
