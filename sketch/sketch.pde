@@ -9,6 +9,28 @@ void setup() {
   
 }
 
+void keyPressed() {
+  //only the spacebar will trigger the below actions
+  if(keyCode != 32) {
+    //println(keyCode);
+    return;
+  }
+  println("Space Bar Pressed");
+
+  ArrayList<Cube> nextSponge = new ArrayList<Cube>();
+  
+  for (Cube c : sponge) {
+    println("cube");
+    ArrayList<Cube> newCubes = c.generate();
+    println("cubes generated");
+    nextSponge.addAll(newCubes);
+    println("cubes added");
+  }
+  
+  sponge = nextSponge;
+  println("sponge updated");
+}
+
 void draw() {
   background(50,50,125);
   

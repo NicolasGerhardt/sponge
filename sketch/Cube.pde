@@ -23,24 +23,28 @@ class Cube {
   }
   
   ArrayList<Cube> generate() {
-    ArrayList<Cube> cubes = new ArrayList<Cube>();
-    
+    println("generating.");
+    ArrayList<Cube> childrenCubes = new ArrayList<Cube>();
+    println("generating..");
     for (int x = -1; x < 2; x++) {
-      for (int y = -1; x < 2; y++) {
-        for (int z = -1; x < 2; z++) {
-          float newR = r/3;
-          float newX = pos.x + newR*x;
-          float newY = pos.y + newR*y;
-          float newZ = pos.z + newR*z;
-          Cube c = new Cube(newX,newY,newZ, newR);
-          cubes.add(c);
-          
+      for (int y = -1; y < 2; y++) {
+        for (int z = -1; z < 2; z++) {
+          int check = abs(x) + abs(y) + abs(z);
+          //println("tring to make cubes");
+          if (check > 1) {
+            float newR = r/3;
+            float newX = pos.x + (newR * x);
+            float newY = pos.y + (newR * y);
+            float newZ = pos.z + (newR * z);
+            Cube c = new Cube(newX,newY,newZ, newR);
+            childrenCubes.add(c);
+          }
           
         } //end z loop
       }// end y loop
     } // end x loop
   
-   return cubes; 
+   return childrenCubes; 
   }
   
 }
