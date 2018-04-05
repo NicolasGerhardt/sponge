@@ -22,4 +22,16 @@ class Cube {
   
   }
   
+  void generate() {
+    for (int x = -1; x < 2; x++) {
+      for (int y = -1; x < 2; x++) {
+        for (int z = -1; x < 2; x++) {
+          
+        }
+      }
+    } 
+  
+  
+  }
+  
 }
