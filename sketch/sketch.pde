@@ -1,11 +1,12 @@
-Cube c;
-
 ArrayList<Cube> sponge;
 
 void setup() {
   size(500, 500, P3D);
   
-  c = new Cube(0,0,0,250);
+  Cube c = new Cube(0,0,0,250);
+  sponge = new ArrayList<Cube>();
+  sponge.add(c);
+  
 }
 
 void draw() {
@@ -25,7 +26,9 @@ void draw() {
   //noStroke();
   //sphere(150);
   
-  c.show();
+  for (Cube c : sponge) {
+    c.show();
+  }
   //box(200);
   
   
