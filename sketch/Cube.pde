@@ -22,16 +22,25 @@ class Cube {
   
   }
   
-  void generate() {
+  ArrayList<Cube> generate() {
+    ArrayList<Cube> cubes = new ArrayList<Cube>();
+    
     for (int x = -1; x < 2; x++) {
-      for (int y = -1; x < 2; x++) {
-        for (int z = -1; x < 2; x++) {
+      for (int y = -1; x < 2; y++) {
+        for (int z = -1; x < 2; z++) {
+          float newR = r/3;
+          float newX = pos.x + newR*x;
+          float newY = pos.y + newR*y;
+          float newZ = pos.z + newR*z;
+          Cube c = new Cube(newX,newY,newZ, newR);
+          cubes.add(c);
           
-        }
-      }
-    } 
+          
+        } //end z loop
+      }// end y loop
+    } // end x loop
   
-  
+   return cubes; 
   }
   
 }
